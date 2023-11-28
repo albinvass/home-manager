@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./neovim
+  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "vass";
@@ -18,7 +21,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    neovim
     ripgrep
     fzf
     git
@@ -42,9 +44,6 @@
     zsh = {
       enable = true;
       enableCompletion = false;
-      shellAliases = {
-        vim = "nvim";
-      };
       oh-my-zsh = {
         enable = true;
         plugins = [
