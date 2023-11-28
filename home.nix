@@ -19,7 +19,6 @@
   };
   programs = {
     vscode.enable = true;
-    rbw.enable = true;
     htop.enable = true;
     awscli.enable = true;
     fzf.enable = true;
