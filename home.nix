@@ -12,6 +12,7 @@
     kubectl
     helm
     azure-cli
+    dig
   ];
 
   home.file = {
