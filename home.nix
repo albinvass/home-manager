@@ -19,13 +19,10 @@
   home.file = {
   };
   programs = {
-    vscode.enable = true;
     htop.enable = true;
     awscli.enable = true;
     fzf.enable = true;
     ripgrep.enable = true;
-    i3status-rust.enable = true;
-    rofi.enable = true;
     k9s.enable = true;
     git = {
       enable = true;
