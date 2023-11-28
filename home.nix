@@ -13,6 +13,7 @@
     helm
     azure-cli
     dig
+    act
   ];
 
   home.file = {
