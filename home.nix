@@ -2,6 +2,7 @@
 {
   imports = [
     ./neovim
+    ./zsh
   ];
 
   home.username = "vass";
@@ -10,10 +11,20 @@
 
   home.packages = with pkgs; [
     kubectl
-    helm
+    kubernetes-helm
     azure-cli
     dig
     act
+    gh
+    git-review
+    docker-compose
+    python311
+    poetry
+    rustc
+    cargo
+    go
+    yarn
+    bitwarden-cli
   ];
 
   home.file = {
@@ -21,27 +32,16 @@
   programs = {
     htop.enable = true;
     awscli.enable = true;
-    fzf.enable = true;
+    fzf = {
+      enable = true;
+      enableZshIntegration = true;
+    };
     ripgrep.enable = true;
     k9s.enable = true;
     git = {
       enable = true;
       userEmail = "albinvass@gmail.com";
       userName = "Albin Vass";
-    };
-    zsh = {
-      enable = true;
-      enableCompletion = false;
-      oh-my-zsh = {
-        enable = true;
-        plugins = [
-          "git"
-          "systemd"
-          "rsync"
-          "kubectl"
-        ];
-        theme = "robbyrussel";
-      };
     };
   };
 
