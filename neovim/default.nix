@@ -13,8 +13,8 @@
     withRuby = true;
     extraPackages = [
       pkgs.tree-sitter
-      pkgs.rnix-lsp
       pkgs.nil
+      pkgs.lua-language-server
     ];
 
     plugins = with pkgs.vimPlugins; [

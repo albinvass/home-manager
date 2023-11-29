@@ -1,6 +1,14 @@
 local nvim_lsp = require('lspconfig')
 local servers = {
-  lua_ls={},
+  lua_ls={
+    settings = {
+      Lua = {
+        diagnostics = {
+	  globals = { 'vim' }
+	}
+      }
+    }
+  },
   nil_ls={},
   pylsp={},
   bashls={},
@@ -26,4 +34,3 @@ for lsp, conf in pairs(servers) do
   }
   nvim_lsp[lsp].setup(conf)
 end
-

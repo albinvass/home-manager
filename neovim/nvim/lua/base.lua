@@ -10,6 +10,7 @@ vim.o.hlsearch = true
 vim.o.colorcolumn = 80
 vim.o.mouse = nil
 vim.g.mapleader = ","
+vim.o.indent = true
 
 vim.cmd 'highlight Normal guibg=NONE ctermbg=NONE'
 
@@ -19,4 +20,3 @@ vim.api.nvim_set_keymap("n", "<C-e>", ":Telescope live_grep<CR>", {})
 vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", {})
 
 require'nvim-tree'.setup{}
-
