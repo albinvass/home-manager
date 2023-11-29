@@ -21,9 +21,8 @@
       enable = true;
       plugins = [
         "git"
-        "systemd"
-        "rsync"
         "kubectl"
+        "ripgrep"
       ];
       theme = "robbyrussel";
     };
