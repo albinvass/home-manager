@@ -24,7 +24,7 @@
         "kubectl"
         "ripgrep"
       ];
-      theme = "robbyrussel";
+      theme = "robbyrussell";
     };
   };
 }

@@ -38,6 +38,7 @@
       nvim-treesitter.withAllGrammars
       nvim-tree-lua
       nvim-web-devicons
+      nvim-FeMaco-lua
     ];
 
     # Automatically require all toplevel lua scripts

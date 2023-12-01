@@ -5,8 +5,8 @@
     ./zsh
   ];
 
-  home.username = "vass";
-  home.homeDirectory = "/home/vass";
+  home.username = "avass";
+  home.homeDirectory = "/home/avass";
   home.stateVersion = "23.11";
 
   home.packages = with pkgs; [
@@ -15,6 +15,7 @@
     azure-cli
     dig
     act
+    actionlint
     gh
     git-review
     docker-compose

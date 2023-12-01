@@ -17,7 +17,7 @@
         config.allowUnfree = true;
       };
     in {
-      homeConfigurations."vass" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."avass" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./home.nix ];
       };
