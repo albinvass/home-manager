@@ -7,9 +7,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -17,9 +18,13 @@
         config.allowUnfree = true;
       };
     in {
-      homeConfigurations."avass" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."avass@dellxps" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home.nix ];
+        modules = [
+	  ./home.nix
+	  inputs.hyprland.homeManagerModules.default
+	  {wayland.windowManager.hyprland.enable = true;}
+	];
       };
     };
 }

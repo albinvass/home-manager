@@ -16,6 +16,7 @@
       fi
     '';
     enableCompletion = false;
+    enableAutosuggestions = true;
     history.extended = true;
     oh-my-zsh = {
       enable = true;
