@@ -25,7 +25,7 @@
     bind = $mainMod_SHIFT, E, exit,
     bind = $mainMod, E, exec, dolphin
     bind = $mainMod, D, exec, fuzzel
-    bind = $mainMod, F, togglefloating,
+    bind = $mainMod, F, fullscreen,
     bind = $mainMod, R, exec, wofi --show drun
     bind = $mainMod, P, pseudo, # dwindle
     bind = $mainMod, V, togglesplit, # dwindle
