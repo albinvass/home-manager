@@ -1,5 +1,6 @@
-{ pkgs, ... }:
+{ ... }:
 {
+  programs.fuzzel.enable = true;
   wayland.windowManager.hyprland.extraConfig = ''
     input {
       kb_layout = se
@@ -23,6 +24,7 @@
     bind = $mainMod_SHIFT, Q, killactive,
     bind = $mainMod_SHIFT, E, exit,
     bind = $mainMod, E, exec, dolphin
+    bind = $mainMod, D, exec, fuzzel
     bind = $mainMod, F, togglefloating,
     bind = $mainMod, R, exec, wofi --show drun
     bind = $mainMod, P, pseudo, # dwindle
