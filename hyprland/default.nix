@@ -1,6 +1,27 @@
-{ ... }:
+{ pkgs, ... }:
 {
+  imports = [ ../konsole ];
+  home.packages = with pkgs; [
+      libsForQt5.konsole
+  ];
   programs.fuzzel.enable = true;
+  programs.mako = {
+    enable = true;
+    defaultTimeout = 4000;
+  };
+  programs.eww = {
+    enable = true;
+    package = pkgs.eww-wayland;
+    configDir =
+      let
+        eww-widgets = pkgs.fetchFromGitHub {
+          owner = "saimoomedits";
+          repo = "eww-widgets";
+          rev = "cfb2523a4e37ed2979e964998d9a4c37232b2975";
+          sha256 = "sha256-yPSUdLgkwJyAX0rMjBGOuUIDvUKGPcVA5CSaCNcq0e8=";
+        };
+      in "${eww-widgets}/eww/bar";
+  };
   wayland.windowManager.hyprland.extraConfig = ''
     input {
       kb_layout = se
