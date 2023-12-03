@@ -1,11 +1,14 @@
 { pkgs, ... }:
 {
   imports = [ ../konsole ];
+
   programs.fuzzel.enable = true;
+
   services.mako = {
     enable = true;
     defaultTimeout = 4000;
   };
+
   programs.eww = {
     enable = true;
     package = pkgs.eww-wayland;
@@ -19,6 +22,7 @@
         };
       in "${eww-widgets}/eww/bar";
   };
+
   wayland.windowManager.hyprland.extraConfig = ''
     input {
       kb_layout = se
