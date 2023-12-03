@@ -1,6 +1,8 @@
 { pkgs, ... }:
 {
-  imports = [];
+  imports = [
+    ./desktop-files
+  ];
 
   home.username = "avass";
   home.homeDirectory = "/home/avass";
