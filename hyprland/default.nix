@@ -23,18 +23,23 @@
     bind = $mainMod, Return, exec, konsole
     bind = $mainMod_SHIFT, Q, killactive,
     bind = $mainMod_SHIFT, E, exit,
-    bind = $mainMod, E, exec, dolphin
     bind = $mainMod, D, exec, fuzzel
     bind = $mainMod, F, fullscreen,
-    bind = $mainMod, R, exec, wofi --show drun
+    bind = $mainMod, S, exec, togglegroup
     bind = $mainMod, P, pseudo, # dwindle
     bind = $mainMod, V, togglesplit, # dwindle
 
-    # Move focus with mainMod + arrow keys
+    # Move focus with mainMod + vim keys
     bind = $mainMod, h, movefocus, l
-    bind = $mainMod, j, movefocus, r
+    bind = $mainMod, j, movefocus, d
     bind = $mainMod, k, movefocus, u
-    bind = $mainMod, l, movefocus, d
+    bind = $mainMod, l, movefocus, r
+
+    # Move window with mainMod + vim keys
+    bind = $mainMod_SHIFT, h, movewindow, l
+    bind = $mainMod_SHIFT, j, movewindow, d
+    bind = $mainMod_SHIFT, k, movewindow, u
+    bind = $mainMod_SHIFT, l, movewindow, r
 
     # Switch workspaces with mainMod + [0-9]
     bind = $mainMod, 1, workspace, 1
