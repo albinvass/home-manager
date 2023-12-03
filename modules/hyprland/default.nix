@@ -1,11 +1,8 @@
 { pkgs, ... }:
 {
   imports = [ ../konsole ];
-  home.packages = with pkgs; [
-      libsForQt5.konsole
-  ];
   programs.fuzzel.enable = true;
-  programs.mako = {
+  services.mako = {
     enable = true;
     defaultTimeout = 4000;
   };

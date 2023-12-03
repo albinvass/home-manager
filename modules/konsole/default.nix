@@ -1,8 +1,13 @@
-{ config, ... }: {
-  home.file."${config.xdg.dataHome}/konsole/avass.profile" = {
-      source = ./profile;
-  };
-  home.file."${config.xdg.configHome}/konsole/avass.colorscheme" = {
-      source = ./colorscheme;
+{ config, pkgs, ... }: {
+  home.packages = with pkgs; [
+      libsForQt5.konsole
+  ];
+  home.file = {
+    "${config.xdg.dataHome}/konsole/avass.profile" = {
+        source = ./avass.profile;
+    };
+    "${config.xdg.dataHome}/konsole/avass.colorscheme" = {
+        source = ./avass.colorscheme;
+    };
   };
 }

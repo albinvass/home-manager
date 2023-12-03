@@ -25,7 +25,10 @@
 	  ./home.nix
 	  inputs.hyprland.homeManagerModules.default
 	  {wayland.windowManager.hyprland.enable = true;}
+	  homeManagerModules.hyprland
 	  homeManagerModules.desktop-files
+	  homeManagerModules.neovim
+	  homeManagerModules.zsh
 	];
       };
       homeManagerModules = inputs.nixos-config.lib.importModules ./modules;

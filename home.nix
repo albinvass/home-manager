@@ -1,10 +1,6 @@
 { pkgs, ... }:
 {
-  imports = [
-    ./neovim
-    ./zsh
-    ./hyprland
-  ];
+  imports = [];
 
   home.username = "avass";
   home.homeDirectory = "/home/avass";
