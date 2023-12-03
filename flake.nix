@@ -8,6 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:hyprwm/Hyprland";
+    nixos-config.url = "github:albinvass/nixos";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:
@@ -17,14 +18,16 @@
         inherit system;
         config.allowUnfree = true;
       };
-    in {
+    in rec {
       homeConfigurations."avass@dellxps" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
 	  ./home.nix
 	  inputs.hyprland.homeManagerModules.default
 	  {wayland.windowManager.hyprland.enable = true;}
+	  homeManagerModules.desktop-files
 	];
       };
+      homeManagerModules = inputs.nixos-config.lib.importModules ./modules;
     };
 }
